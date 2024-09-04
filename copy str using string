@@ -1,0 +1,7 @@
+def copy(source):
+    if not source:
+        return ""
+    return source[0] + copy(source[1:])
+source_string = "Hello, World!"
+copied_string = copy(source_string)
+print(copied_string)  # Output: Hello, World!
