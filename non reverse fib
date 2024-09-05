@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int fibonacci_recursive(int n) {
+    if (n <= 1) return n;
+    return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2);
+}
+
+int main() {
+    int number;
+    printf("Enter a positive integer for Fibonacci: ");
+    scanf("%d", &number);
+    printf("Fibonacci of %d (recursive) is: %d\n", number, fibonacci_recursive(number));
+    return 0;
+}
