@@ -1,0 +1,23 @@
+def can_break(s1, s2):
+
+    sorted_s1 = ''.join(sorted(s1))
+    sorted_s2 = ''.join(sorted(s2))
+    def can_break_helper(a, b):
+        for i in range(len(a)):
+            if a[i] < b[i]:
+                return False
+        return True
+
+    return can_break_helper(sorted_s1, sorted_s2) or can_break_helper(sorted_s2, sorted_s1)
+
+s1 = "abc"
+s2 = "xya"
+print(can_break(s1, s2))  # Output: True (since "xya" can break "abc")
+
+s1 = "abc"
+s2 = "cba"
+print(can_break(s1, s2))  # Output: True (since "cba" can break "abc")
+
+s1 = "abe"
+s2 = "acd"
+print(can_break(s1, s2))  # Output: False (since neither "abe" can break "acd" nor "acd" can break "abe")
